@@ -1,0 +1,17 @@
+<div class="editor-body">
+    <h1>Редактор локаций:</h1>
+
+    <ul class="table">
+        {{#each locations}}
+        <li>
+            <span>{{this.name}}</span>
+            <span>
+                <a href="/edit/location/{{this.id}}">изменить</a>
+                <a href="#" class="js-remove red" data-id="{{this.id}}" data-type="location">удалить</a>
+            </span>
+        </li>
+        {{/each}}
+        <li><span></span><a href="/edit/location">добавить</a></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>

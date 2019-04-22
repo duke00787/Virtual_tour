@@ -1,0 +1,25 @@
+
+<div class="editor-body">
+    <h1>Редактор локации:</h1>
+    <ul class="table">
+        <li><span>Название:</span><input id="name" type="text" value="{{location.name}}" /></li>
+        <li><span>Описание:</span><input id="description" type="text" value="{{location.description}}" /></li>
+        {{#if isNew}}
+        <li><span>Панорама:</span><input id="img" type="file"></li>
+        {{else}}
+        <li class="js-location-editor">
+            <div id="editor-position" class="viever-editor" data-excursion="{{location.excursion}}" data-location="{{location.id}}"></div>
+            <div id="editor-sort">
+                <ul class="table js-node-list"></ul>
+                <div>
+                    <input type="text" id="new-node-text"/><a href="#" class="js-new-node">добавить</a>
+                </div>
+            </div>
+        </li>
+        {{/if}}
+
+        <li><span></span><button class="js-edit-location" data-id="{{location.id}}">Сохранить</button></li>
+    </ul>
+</div>
+
+<script src='/javascripts/edit.js'></script>

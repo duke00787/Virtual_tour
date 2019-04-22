@@ -1,0 +1,18 @@
+<div class="editor-body">
+    <h1>Редактор переходов:</h1>
+
+    <ul class="table">
+        {{#each transitions}}
+        <li>
+            <span> {{this.locationFrom}} - {{this.locationTo}} </span>
+
+            <span>
+                <a href="/edit/transition/{{this.id}}">изменить</a>
+                <a href="#" class="js-remove red" data-id="{{this.id}}" data-type="transition">удалить</a>
+            </span>
+        </li>
+        {{/each}}
+        <li><span></span><a href="/edit/transition">добавить</a></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>

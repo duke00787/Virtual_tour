@@ -1,0 +1,19 @@
+<div class="editor-body">
+    <h1>Редактор маршрутов:</h1>
+
+    <ul class="table">
+        {{#each paths}}
+        <li>
+            <span> {{this.name}}</span>
+
+            <span>
+                <a href="/edit/path/{{this.id}}">изменить</a>
+                <a href="#" class="js-remove red" data-id="{{this.id}}" data-type="path">удалить</a>
+            </span>
+        </li>
+
+        {{/each}}
+        <li><span></span><a href="/edit/path">добавить</a></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>

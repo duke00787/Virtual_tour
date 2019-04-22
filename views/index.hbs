@@ -1,0 +1,69 @@
+<div class="menu">
+    <img src="images/logo.png">
+</div>
+<div class="dialog" style="display:none">
+    <div class="body" >
+          <div class="text">
+            Пожалуйста оцените наш виртуальный тур
+          </div>
+          <div class="options">
+              <div>
+                <input type="radio" value="5" id="a0" name="stars" checked/>
+                <label for="a0">Очень понравился!</label>
+              </div>
+              <div>
+                <input type="radio" value="4" id="a1" name="stars"/>
+                <label for="a1">Понравился!</label>
+              </div>
+              <div>
+                <input type="radio" value="3" id="a2" name="stars"/>
+                <label for="a2">Хорошо, но есть куда рости!</label>
+              </div>
+              <div>
+                <input type="radio" value="2" id="a3" name="stars"/>
+                <label for="a3">Не понравился!</label>
+              </div>
+              <div>
+                <input type="radio" value="1" id="a4" name="stars"/>
+                <label for="a4">Ужасно!</label>
+              </div>
+          </div>
+          <div class="actions">
+            <button class="js-like">
+              Оценить
+            </button>
+            <button class="js-repeat">
+              Просмотреть еще раз
+            </button>
+            <button class="js-new-excursion">
+              Другой маршрут
+            </button>
+          </div>
+    </div>   
+</div>
+<div class="controls bottom">
+    <div>
+        <i class="fas fa-angle-left"></i>
+    </div>
+    <div>
+        <i class="fas fa-angle-right"></i>
+    </div>
+    <div>
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <div>
+        <i class="fas fa-angle-down"></i>
+    </div>    
+    <div>
+        <i class="fas fa-search-minus"></i>
+    </div>    
+    <div>
+        <i class="fas fa-search-plus"></i>
+    </div>
+</div>
+<div id="typed-dialog">
+    <div id="typed">Добро пожаловать!</div>
+</div>
+<div id="data" style="display: none" data-data="{{data}}"></div>
+<script src="javascripts/typed.min.js"></script>
+<script src="javascripts/index.js"></script>

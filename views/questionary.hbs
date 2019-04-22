@@ -1,0 +1,34 @@
+<div class="editor-body">
+    <h1>Выберете интиресующие вас пункты</h1>
+
+    <ul class="table js-questionary">
+        {{#each questions}}
+        <li>
+            <div style="flex:1">{{this.text}}</div>
+            <div style="flex:1">
+                {{#each this.data}}
+                <div>
+                    <input type="checkbox" value="{{this.path}}" id="{{this.id}}"/>
+                    <label for="{{this.id}}">{{this.ans}}</label>
+                </div>
+                {{/each}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    <div>
+        <button class="js-start">Показать</button>
+    </div>
+</div>
+<script>
+$('.js-start').click(() => {
+    const checkboxes = $('.js-questionary input:checked');
+    const result = [];
+    for (let item of checkboxes) {
+        result.push(item.value)
+    }
+    if (result.length) {
+        location.href = `/excursion?excursion=${JSON.stringify(result)}`
+    }
+})
+</script>

@@ -1,0 +1,23 @@
+<div class="editor-body">
+    <h1>Редактор вопроса:</h1>
+    <ul class="table">
+        <li><span>Вопрос:</span><input id="text" type="text" value="{{question.text}}" /></li>
+        <li style="display: none"><span>Ответы:</span><input id="data" type="text" value="{{question.data}}" /></li>
+        <li>
+            <span>Ответы:</span>
+            <ul class="table js-question-editor">
+                <li>
+                    <input id="ans" type="text" />
+                    <select id="paths" data-paths="{{pathsStr}}">
+                        {{#each paths}}
+                        <option value="{{this.id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    <a class="js-question-node-add" href="#">добавить</a>
+                </li>
+            </ul>
+        </li>
+        <li><span></span><button class="js-edit-question" data-id="{{question.id}}">Сохранить</button></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>

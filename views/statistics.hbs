@@ -1,0 +1,47 @@
+<div class="editor-body">
+    <h1>Редактор тура:</h1>
+    <div id="chart" data-data="{{likes}}" style="height: 400px">
+
+    </div>
+</div>
+<script src="/javascripts/chartist.min.js"></script>
+<script>
+    
+    const sum = function(a, b) {
+        return a + b
+    };
+    const label = function(val) {
+        switch (val) {
+            case 1: return 'Ужасно!'
+            case 2: return 'Не понравился!'
+            case 3: return 'Хорошо, но есть куда рости!'
+            case 4: return 'Понравился!'
+            case 5: return 'Очень понравился!'
+        }
+        return '';
+    }
+//    const className(val) 
+    let counters = {}
+    let labels = {}
+    for (let i of $('#chart').data('data')) {
+        if (counters[i.value] === undefined) {
+//            counters[i.value] = {
+//                className: 
+//            };
+            counters[i.value] = 0;
+            labels[i.value] = label(i.value);
+        }
+        counters[i.value] += 1;
+    }
+    const data = {
+        labels: Object.values(labels),
+        series: Object.values(counters)
+    }
+    
+    new Chartist.Pie('#chart', data, {
+        labelInterpolationFnc: function(label, i) {
+            return Math.round(data.series[i] / data.series.reduce(sum) * 100) + '% ' + label;
+        }
+    });
+
+</script>

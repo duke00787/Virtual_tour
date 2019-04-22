@@ -1,0 +1,31 @@
+<div class="editor-body">
+    <h1>Редактор перехода:</h1>
+    <ul class="table">
+        <li><span>Локация 1:</span>
+            <select id="l1">
+                <option {{#if isNew}} selected {{/if}}>не выбрано</option>
+                {{#each locations}}
+                <option value="{{this.id}}" {{#if this.isSelected1}} selected {{/if}}>{{this.name}}</option>
+                {{/each}}
+            </select>
+        </li>
+        <li><span>Локация 2:</span>
+            <select id="l2">
+                <option {{#if isNew}} selected {{/if}}>не выбрано</option>
+                {{#each locations}}
+                <option value="{{this.id}}" {{#if this.isSelected2}} selected {{/if}}>{{this.name}}</option>
+                {{/each}}
+            </select>
+        </li>
+        <li style="display: none"><input id="c1" type="text" value="{{transition.xyz1}}" /><input id="c2" type="text" value="{{transition.xyz2}}" /></li>
+        <li class="js-transition-editor">
+            <select id="location" class="location-select">
+                <option value="0">Локация 1</option>
+                <option value="1" selected>Локация 2</option>
+            </select>
+            <div id="editor" class="viever-editor"></div>
+        </li>
+        <li><span></span><button class="js-edit-transition" data-id="{{transition.id}}">Сохранить</button></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>

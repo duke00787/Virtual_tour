@@ -1,0 +1,22 @@
+<div class="editor-body">
+    <h1>Редактор локации:</h1>
+    <ul class="table">
+        <li><span>Название:</span><input id="name" type="text" value="{{path.name}}" /></li>
+        <li style="display: none"><span>Путь:</span><input id="path" type="text" value="{{path.path}}" /></li>
+        <li>
+            <span>Путь:</span>
+            <ul class="table js-path-editor">
+                <li>
+                    <select id="location" data-locations="{{locationsStr}}">
+                        {{#each locations}}
+                        <option value="{{this.id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    <a class="js-path-node-add" href="#">добавить</a>
+                </li>
+            </ul>
+        </li>
+        <li><span></span><button class="js-edit-path" data-id="{{path.id}}">Сохранить</button></li>
+    </ul>
+</div>
+<script src='/javascripts/edit.js'></script>
