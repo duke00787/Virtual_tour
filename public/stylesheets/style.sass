@@ -1,0 +1,126 @@
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro)
+
+body
+    padding: 0
+    color: #515b60
+    font-family: 'Anonymous Pro', monospace
+  
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: 0
+
+.menu 
+    position: absolute
+    top: 10px
+    left: 10px
+
+a
+  color: blue
+
+ul.table
+    border-radius: 4px
+    border: 1px solid #d7d7d7
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+        display: flex
+        justify-content: space-between
+        padding: 5px 15px
+        border-bottom: 1px solid #d7d7d7
+        &:last-child
+            border-bottom: none;
+
+.dialog 
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    line-height: 100vh
+    background: #000000c4
+    text-align: center
+    .body
+        display: inline-block
+        width: 400px
+        min-width: 200px
+        line-height: 18px
+        background-color: #fff
+        border-radius: 4px
+        padding: 20px
+        text-align: left
+
+.editor-body
+    width: 1150px;
+    margin: auto
+.viever-editor
+    height: 500px
+    width: 700px
+#editor-sort
+    width: 400px
+    li
+        input
+            border: none;
+            flex: 1;
+            margin: 0 15px;
+            padding: 0 5px;
+        .fa-angle-right
+            color: transparent
+        &.selected
+           .fa-angle-right
+                color: #15aabf
+.location-select
+    height: 40px
+.fa-trash:hover
+    color: #ea4335
+    cursor: pointer
+    
+#typed-dialog
+    position: absolute;
+    top: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+#typed
+    color: #fff;
+    text-shadow: 0px 0px 2px #000;
+    font-size: 24pt;
+.controls
+    display: flex
+    border-radius: 40px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    background-color: #fff;
+    > div
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        position: relative;
+        
+        &:not(:first-child):before 
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            left: -1px;
+            background-color: #f5f5f5;
+            z-index: 1;
+        .fas
+            font-size: 28px;
+            line-height: 40px;
+            color: #666666
+        &:hover 
+            cursor: pointer;
+            .fas
+                color: #000
+        
+    &.bottom
+        position: absolute
+        bottom: 15px;
+        left: 50%;
+        margin-left: -120px;
